@@ -1,0 +1,30 @@
+config {
+  language = fr
+  locale_all =  fr_FR_UTF-8
+  htmlTag_setParams = lang="fr" dir="ltr" class="no-js"
+}
+
+page {
+  includeCSS{   
+    theme = EXT:Resources/Public/Less/theme.less   
+  }
+  
+  includeJSFooterlibs {
+    t3_verticaltheme = EXT:Resources/Public/JavaScript/main.js
+  }
+  
+  10 {
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+      60 = BK2K\BootstrapPackage\DataProcessing\MenuProcessor
+      60 {
+        special = directory
+        special.value = 528
+        //includeNotInMenu = {$page.theme.meta.includeNotInMenu}
+        as = horizontalnavigation
+      }
+    }
+  }
+}

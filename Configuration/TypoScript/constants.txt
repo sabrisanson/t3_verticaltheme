@@ -1,0 +1,4 @@
+plugin.tx_felogin_pi1.storagePid = 0
+page.fluidtemplate.partialRootPath = EXT:Resources/Private/Partials/Page/
+page.fluidtemplate.layoutRootPath = EXT:Resources/Private/Layouts/Page/
+page.fluidtemplate.templateRootPath = EXT:Resources/Private/Templates/Page/
