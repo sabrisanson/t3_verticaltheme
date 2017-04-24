@@ -1,0 +1,52 @@
+<div class="hidden-lg hidden-md">
+  <button type="button" class="hamburger is-closed" data-toggle="hamburger" data-target=".navbar_mainnavigation">
+    <span class="hamb-top"></span>
+    <span class="hamb-middle"></span>
+    <span class="hamb-bottom"></span>
+  </button>
+</div>
+<f:if condition="{mainnavigation}">
+  <div class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper">
+    <f:if condition="{settings.logo.file}">
+      <f:then>
+        <f:link.page pageUid="{rootPage}" class="hidden-xs navbar-brand navbar-brand-image">
+          <img src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
+        </f:link.page>
+      </f:then>
+      <f:else>
+        <f:link.page pageUid="{rootPage}" class="navbar-brand">{siteTitle}</f:link.page>
+      </f:else>
+    </f:if>
+    <nav class="navbar-collapse collapse navbar_mainnavigation"  role="navigation">
+      <ul class="nav sidebar-nav">
+        <f:for each="{mainnavigation}" as="mainnavigationItem">
+          <li class="{f:if(condition: mainnavigationItem.active, then:'active')} {f:if(condition: mainnavigationItem.children, then:'dropdown')}">
+            <f:if condition="{mainnavigationItem.children}">
+              <f:then>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {mainnavigationItem.title}
+                  <b class="caret"></b>                                     
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <f:for each="{mainnavigationItem.children}" as="child">
+                    <li class="{f:if(condition: child.active, then:'active')}">
+                      <f:link.page pageUid="{child.data.uid}" title="{child.title}">
+                        {child.title}
+                      </f:link.page>
+                    </li>
+                  </f:for>
+                </ul>
+              </f:then>
+              <f:else>
+                <f:link.page pageUid="{mainnavigationItem.data.uid}" title="{mainnavigationItem.title}">
+                  {mainnavigationItem.title}
+                  <span class="bar"></span>
+                </f:link.page>
+              </f:else>
+            </f:if>
+          </li>
+        </f:for>
+      </ul>
+    </nav>
+  </div>
+</f:if>

@@ -1,0 +1,64 @@
+<header class="navbar navbar-{settings.navigation.style}{f:if(condition:settings.logo.file,then:' navbar-has-image')}{f:if(condition:settings.navigation.type, else:' navbar-top', then:' navbar-{settings.navigation.type} navbar-fixed-{settings.navigation.type}')}">
+  <div class="navbar-header">
+    <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="hamburger2 is-closed pull-right hidden-md hidden-lg">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+  </div>  
+  <f:if condition="{horizontalnavigation}">
+    <div class="navbar-inverse side-collapse in">
+      <div class="hidden-md hidden-lg liensdirects">
+        Liens directs
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <nav class="navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+              <f:for each="{horizontalnavigation}" as="horizontalnavigationItem">
+                <li class="{f:if(condition: horizontalnavigationItem.active, then:'active')} {f:if(condition: horizontalnavigationItem.children, then:'dropdown')}">
+                  <f:if condition="{horizontalnavigationItem.children}">
+                    <f:then>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {horizontalnavigationItem.title}
+                        <b class="caret"></b>
+                        <span class="bar"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <f:for each="{horizontalnavigationItem.children}" as="child">
+                          <li class="{f:if(condition: child.active, then:'active')}">
+                            <f:link.page pageUid="{child.data.uid}" title="{child.title}">
+                              {child.title}
+                            </f:link.page>
+                          </li>
+                        </f:for>
+                      </ul>
+                    </f:then>
+                    <f:else>
+                      <f:link.page pageUid="{horizontalnavigationItem.data.uid}" title="{horizontalnavigationItem.title}">
+                        {horizontalnavigationItem.title}
+                        <span class="bar"></span>
+                      </f:link.page>
+                    </f:else>
+                  </f:if>
+                </li>
+              </f:for>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+          <div id="custom-search-input">
+            <div class="input-group">
+              <input type="text" class="form-control input-lg" placeholder="Rechercher" />
+              <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </f:if>
+</header>
