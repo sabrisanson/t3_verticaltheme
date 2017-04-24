@@ -1,0 +1,533 @@
+//
+// Variables
+//-------------------------
+@color_1: #fff;
+@color_2: #ddd;
+@color_3: #666666;
+@background_color_1: #1a1a1a;
+@background_color_2: #ddd;
+@background_color_3: transparent;
+@background_color_4: unset;
+@background_color_5: #1c1c1c;
+@background_color_6: #ec1b5a;
+@background_color_7: #79aefe;
+@background_color_8: #314190;
+@background_color_9: #279636;
+@background_color_10: #7d5d81;
+@background_color_11: #ead24c;
+@background_color_12: #2d2366;
+@background_color_13: #35acdf;
+@background_color_14: #222;
+@background_color_15: #fff;
+
+//
+// Barre de recherche
+//-------------------------
+.form-control {
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#custom-search-input {
+  margin-top: 3px;
+  padding: 3px;
+  border: solid 1px #E4E4E4;
+  border-radius: 6px;
+  background-color: @background_color_15; 
+  input {
+    border: 0;
+    box-shadow: none;
+  } 
+  button {
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: @color_3;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+    &:hover {
+      border: 0;
+      box-shadow: none;
+      border-left: solid 1px #ccc;
+    }
+  }
+  .glyphicon-search {
+    font-size: 23px;
+  }
+}
+
+//
+// Menus
+//-------------------------
+.sidebar-nav,
+.navbar-nav {
+  position: relative;
+  top: 0;
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+  li {
+    position: relative;
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 3px;
+      background-color: @background_color_5;
+      -webkit-transition: width .2s ease-in;
+      -moz-transition: width .2s ease-in;
+      -ms-transition: width .2s ease-in;
+      transition: width .2s ease-in;
+    }   
+    &:first-child {
+      &:before {
+        background-color: @background_color_6;
+      }
+    }
+    &:nth-child(2) {
+      &:before {
+        background-color: @background_color_7;
+      }
+    }   
+    &:nth-child(3) {
+      &:before {
+        background-color: @background_color_8;
+      }
+    }   
+    &:nth-child(4) {
+      &:before {
+        background-color: @background_color_9;
+      }
+    } 
+    &:nth-child(5) {
+      &:before {
+        background-color: @background_color_10;
+      }
+    }   
+    &:nth-child(6) {
+      &:before {
+        background-color: @background_color_11;
+      }
+    }
+    &:nth-child(7) {
+      &:before {
+        background-color: @background_color_12;
+      }
+    }  
+    &:nth-child(8) {
+      &:before {
+        background-color: @background_color_13;
+      }
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+        -webkit-transition: width .2s ease-in;
+        -moz-transition: width .2s ease-in;
+        -ms-transition: width .2s ease-in;
+        transition: width .2s ease-in;
+      }
+    }   
+    a {
+      display: block;
+      color: @color_2;
+      text-decoration: none;
+      padding: 10px 15px 10px 30px;    
+      &:hover {
+        color: @color_1;
+        text-decoration: none;
+        background-color: @background_color_3;
+      }     
+      &:active {
+        color: @color_1;
+        text-decoration: none;
+        background-color: @background_color_3;
+      }    
+      &:focus {
+        color: @color_1;
+        text-decoration: none;
+        background-color: @background_color_3;
+      }
+    }
+  } 
+  li.open {
+    &:hover {
+      &:before {
+        width: 100%;
+        -webkit-transition: width .2s ease-in;
+        -moz-transition: width .2s ease-in;
+        -ms-transition: width .2s ease-in;
+        transition: width .2s ease-in;
+      }
+    }  
+    a {
+      &:hover {
+        color: @color_1;
+        text-decoration: none;
+        background-color: @background_color_3;
+      }     
+      &:active {
+        color: @color_1;
+        text-decoration: none;
+        background-color: @background_color_3;
+      }
+      &:focus {
+        color: @color_1;
+        text-decoration: none;
+        background-color: @background_color_3;
+      }
+    }
+  } 
+  .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: @background_color_14;
+    box-shadow: none;
+  }
+}
+
+.navbar-collapse {
+  padding-left: 0;
+  border-top: unset;
+}
+
+.navbar-inverse {
+  padding-top: 10px;
+  background-color: @background_color_15;
+}
+
+.hamburger,
+.hamburger2 {
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none; 
+  &:hover {
+    outline: none;
+  } 
+  &:focus {
+    outline: none;
+  } 
+  &:active {
+    outline: none;
+  }
+}
+
+.hamburger.is-closed,
+.hamburger2.is-closed {
+  &:before {
+    content: '';
+    display: block;
+    width: 100px;
+    font-size: 14px;
+    color: @color_1;
+    line-height: 32px;
+    text-align: center;
+    opacity: 0;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: all .35s ease-in-out;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+      display: block;
+      -webkit-transform: translate3d(-100px,0,0);
+      -webkit-transition: all .35s ease-in-out;
+    } 
+    .hamb-top {
+      top: 0;
+      -webkit-transition: all .35s ease-in-out;
+    }  
+    .hamb-bottom {
+      bottom: 0;
+      -webkit-transition: all .35s ease-in-out;
+    }
+  }
+  .hamb-top {
+    position: absolute;
+    right: 0;
+    height: 4px;
+    width: 100%;
+    background-color: @background_color_1;
+    top: 5px;
+    -webkit-transition: all .35s ease-in-out;
+  }
+  .hamb-middle {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: @background_color_1;
+    top: 50%;
+    margin-top: -2px;
+  } 
+  .hamb-bottom {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: @background_color_1;
+    bottom: 5px;
+    -webkit-transition: all .35s ease-in-out;
+  }
+}
+
+.hamburger.is-open,
+.hamburger2.is-open {
+  .hamb-top {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: @background_color_1;
+    top: 50%;
+    margin-top: -2px;
+    -webkit-transform: rotate(45deg);
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+  }
+  .hamb-middle {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: @background_color_1;
+    display: none;
+  }
+  .hamb-bottom {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: @background_color_1;
+    top: 50%;
+    margin-top: -2px;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+  } 
+  &:before {
+    content: '';
+    display: block;
+    width: 100px;
+    font-size: 14px;
+    color: @color_1;
+    line-height: 32px;
+    text-align: center;
+    opacity: 0;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: all .35s ease-in-out;
+  } 
+  &:hover {
+    &:before {
+      opacity: 1;
+      display: block;
+      -webkit-transform: translate3d(-100px,0,0);
+      -webkit-transition: all .35s ease-in-out;
+    }
+  }
+}
+
+//
+// Menu gauche/vertical
+//-------------------------
+.menu {
+  margin-left: 30px;
+}
+
+.navbar-collapse.in {
+  overflow-y: unset;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  width: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #1a1a1a;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding-top: 0px; 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#wrapper.toggled {
+  padding-left: 220px; 
+  #sidebar-wrapper {
+    width: 220px;
+    margin-left:0;
+  } 
+  #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+  }
+}
+
+.hamburger {
+  position: relative;
+  top: -52px
+}
+
+.navbar-brand {
+  padding: 0;
+  width: 220px;
+  float: none;
+}
+
+//
+// Menu droit/horizontal
+//-------------------------
+.liensdirects {
+  text-align: center;
+  color: @color_2;
+}
+
+.navbar-top {
+  margin-bottom: 0;
+}
+
+.navbar-nav {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 0;  
+  li {
+    width: 200px;
+    text-align: center;
+    &:before {
+      right: 0;
+      left: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .side-collapse-container {
+    width: 100%;
+    position: relative;
+    right: 0;
+    transition: left .4s;
+  } 
+  .side-collapse-container.out {
+    right: 200px;
+  } 
+  .side-collapse {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    position: fixed;
+    overflow: hidden;
+    transition: width .4s;
+    z-index: 1000;
+    background-color: @background_color_1
+  } 
+  .side-collapse.in {
+    width: 0;
+  }
+}
+
+.hamburger2 {
+  float: right;
+  right: 15px;
+  position: absolute;
+  margin-top: 19px;
+}
+
+//
+// Footer
+//-------------------------
+footer {
+  display: table-row;
+  text-align: center;
+  background-color: @background_color_2;
+}
+
+//
+// Body
+//-------------------------
+body {
+  position: relative;
+  display: table;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  h1 {
+    margin-top: 0;
+  }
+}
+
+//
+// Nav
+//-------------------------
+.nav {
+  >li {
+    >a {
+      &:hover {
+        background-color: @background_color_4;
+      }     
+      &:focus {
+        background-color: @background_color_4;
+      }
+    }
+  } 
+  .open {
+    >a {
+      background-color: @background_color_3;
+      background-color: @background_color_4;     
+      &:hover {
+        background-color: @background_color_3;
+        background-color: @background_color_4;
+      }     
+      &:focus {
+        background-color: @background_color_3;
+        background-color: @background_color_4;
+      }
+    }
+  }
+}
+
+//
+// Row
+//-------------------------
+.row {
+  margin-right: unset;
+}
+
+//
+// Navbar
+//-------------------------
+.navbar {
+  border: unset;
+}
+
+
+//
+// Wrapper
+//-------------------------
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
