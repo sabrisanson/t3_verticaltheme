@@ -22,7 +22,6 @@ page {
       60 {
         special = directory
         special.value = 528
-        //includeNotInMenu = {$page.theme.meta.includeNotInMenu}
         as = horizontalnavigation
       }
     }
