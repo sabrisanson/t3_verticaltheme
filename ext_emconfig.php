@@ -12,9 +12,10 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_company' => 'CDG46',
 	'constraints' => 
 	array (
-		'depends' => bootstrap_package
+		'depends' => 
 		array (
-			'typo3' => '7.6.2 - 8.99.99'
+			'typo3' => '7.6.2 - 8.99.99',
+			'bootstrap_package' => '7.0.2 - 8.99.99',
 		),
 		'conflicts' => 
 		array (
